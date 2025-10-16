@@ -16,13 +16,13 @@ export default function Routers() {
             <Header/>
             <Routes>
                 <Route path="/" element={<Home/>}>
-                    <Route path='/document' element={<Document/>}></Route>
+                    <Route path="document" element={<Document/>}></Route>
                 </Route>
                 <Route path="/about" element={<About/>}/>
                 <Route path="/contact" element={<Contact/>}/>
                 <Route path="/tutorial" element={<Tutorial/>}/>
                 <Route path="/api" element={<Api/>}/>
-                <Route path="/product/:slug" element={<ProductById/>}/>
+                <Route path="/product/:id" element={<ProductById/>}/>
                 <Route path="*" element={<Error/>}/>
             </Routes>
             <Footer/>

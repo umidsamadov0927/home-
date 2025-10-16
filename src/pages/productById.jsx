@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 export default function ProductById() {
-    const { slug } = useParams();
+    const { id } = useParams();
     const [product, setProduct] = useState(null);
 
     useEffect(() => {
@@ -12,7 +12,7 @@ export default function ProductById() {
                 const data = await res.json();
 
                 // aka shu joyini gpt qilib berdi bu joyi slug bn topadi va bittasini ekranga chiqaradi
-                const found = data.find((item) => item.slug === slug);
+                const found = data.find((item) => item.slug === id);
                 setProduct(found);
             } catch (err) {
                 console.log(err);
@@ -20,7 +20,7 @@ export default function ProductById() {
         }
 
         getProductBySlug();
-    }, [slug]);
+    }, [id]);
 
     if (!product) {
         return <p className="text-gray-500 text-center mt-28">Loading...</p>;
